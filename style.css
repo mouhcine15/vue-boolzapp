@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    background-color: aqua;
+}
+
+.sezione {
+    height: 100vh;
+    padding: 0;
+}
+
+.intestazione {
+    height: 70px;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.imgProfilo img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.justify {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
