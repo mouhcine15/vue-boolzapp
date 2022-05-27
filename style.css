@@ -20,11 +20,35 @@
     background-color: lightgrey;
 }
 
-.imgProfilo img {
+img {
     width: 60px;
     border-radius: 50%;
 }
 
+i {
+    margin: 5px;
+}
+
+.alert {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(0, 157, 255);
+}
+
+#bell {
+    background-color: white;
+    border-radius: 50%;
+}
+
+.parte-dx {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+}
 .justify {
     display: flex;
     justify-content: flex-start;
@@ -43,4 +67,8 @@
 .space-around {
     display: flex;
     justify-content: space-around;
+}
+
+.white-bg {
+    background-color: white;
 }

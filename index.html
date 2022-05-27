@@ -17,6 +17,50 @@
                 <div class="intestazione space-between">
                     <div class="justify center-vertical">
                         <div class="imgProfilo">
+                            <img src="https://image-aws-us-west-2.vsco.co/e057e2/163313516/602ba96f86483d4088000002/vsco602ba970626cf.jpg" alt="">
+                        </div>
+                        <div>
+                            Luffy
+                        </div>
+                    </div>
+                    <div class="center-vertical space-around">
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-comment"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+                <div class="alert justify center-vertical">
+                    <div id="bell">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div>
+                        <div>
+                            Ricevi notifiche di nuovi messaggi
+                        </div>
+                        <div>
+                            Attiva notifiche desktop
+                        </div>
+                    </div>
+                </div>
+                <div class="justify center-vertical white-bg">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" placeholder="cerca e inizia una nuova chat">
+                </div>
+
+                <div class="">
+                    <div class="imgProfilo" >
+                        
+                    </div>
+                    <div v-for="(user, i) in contacts" :key="i">
+                        <img :src="user.avatar"/>
+                       {{user.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 sezione parte-dx">
+                <div class="intestazione space-between">
+                    <div class="justify center-vertical">
+                        <div class="imgProfilo">
                             <img src="https://c8.alamy.com/compit/p9mywr/uomo-profilo-di-avatar-p9mywr.jpg" alt="">
                         </div>
                         <div>
@@ -24,15 +68,13 @@
                         </div>
                     </div>
                     <div class="center-vertical space-around">
-                        <i class="fa-solid fa-download"></i>
-                        <i class="fa-solid fa-comment"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-8 sezione">
-                <div class="intestazione">
-
+                <div>
+                    <input type="text" placeholder="Scrivi un messaggio">
                 </div>
             </div>
 
