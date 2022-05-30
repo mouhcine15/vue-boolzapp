@@ -73,9 +73,9 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="chat" v-for="">
+                <div class="chat" v-for="messaggi in contacts[active].messages">
                     <div>
-                        {{contacts[active].messages[active].message}}
+                        {{messaggi.message}}
                     </div>
                 </div>
                 <div class="justify grey-bg">
