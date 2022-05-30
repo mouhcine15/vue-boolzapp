@@ -1,6 +1,7 @@
 const root = new Vue({
     el: "#app",
     data: {
+        newMessage: "",
         active: 0,
         contacts: [
             {
@@ -148,6 +149,20 @@ const root = new Vue({
             } else {
                 return "mandato-color"
             }
+        },
+
+        aggiungi() {
+            const nuovo = {
+                message: this.newMessage,
+                status: 'sent'  
+            }
+
+            if (this.newMessage != "") {
+                this.contacts[this.active].messages.push(nuovo);
+                this.newMessage = "";
+            }
+            
         }
+
     }
 });

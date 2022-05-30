@@ -86,7 +86,7 @@
                 </div>
                 <div class="justify grey-bg chat-pt-bassa" id="barra-text" >
                     <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="aggiungi()">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
             </div>
