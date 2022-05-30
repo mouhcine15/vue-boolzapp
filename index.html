@@ -51,7 +51,7 @@
                     <div class="imgProfilo" >
                         
                     </div>
-                    <div v-for="(user, i) in contacts" :key="i">
+                    <div v-for="(user, i) in contacts" :key="i" @click="directchat(i)">
                         <img :src="user.avatar"/>
                        {{user.name}}
                     </div>
@@ -61,10 +61,10 @@
                 <div class="intestazione space-between">
                     <div class="justify center-vertical">
                         <div class="imgProfilo">
-                            <img src="https://c8.alamy.com/compit/p9mywr/uomo-profilo-di-avatar-p9mywr.jpg" alt="">
+                            <img :src="contacts[active].avatar">
                         </div>
                         <div>
-                            Sofia
+                            {{contacts[active].name}}
                         </div>
                     </div>
                     <div class="center-vertical space-around">
@@ -73,7 +73,12 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div class="justify">
+                <div class="chat" v-for="">
+                    <div>
+                        {{contacts[active].messages[active].message}}
+                    </div>
+                </div>
+                <div class="justify grey-bg">
                     <i class="fa-regular fa-face-smile"></i>
                     <input type="text" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone"></i>

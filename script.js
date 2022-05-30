@@ -1,6 +1,7 @@
 const root = new Vue({
     el: "#app",
     data: {
+        active: 0,
         contacts: [
             {
                 name: 'Zoro',
@@ -126,5 +127,12 @@ const root = new Vue({
             }
             
         ] 
+    },
+    methods: {
+        
+        directchat(active) {
+                
+            this.active = active;
+        }
     }
 });
