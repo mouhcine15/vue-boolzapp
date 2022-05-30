@@ -133,6 +133,21 @@ const root = new Vue({
         directchat(active) {
                 
             this.active = active;
+        },
+        mandatoRicevuto(status) {
+            if (status == "received") {
+                return "ricevuto"
+            } else {
+                return "mandato"
+            }
+        },
+
+        messageColor(status) {
+            if (status == "received") {
+                return "ricevuto-color"
+            } else {
+                return "mandato-color"
+            }
         }
     }
 });

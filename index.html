@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8 sezione parte-dx">
+            <div class="col-8 sezione relative">
                 <div class="intestazione space-between">
                     <div class="justify center-vertical">
                         <div class="imgProfilo">
@@ -74,11 +74,17 @@
                     </div>
                 </div>
                 <div class="chat" v-for="messaggi in contacts[active].messages">
-                    <div>
-                        {{messaggi.message}}
+                    
+                    <div :class="mandatoRicevuto(messaggi.status)">
+                        <div :class="messageColor(messaggi.status)">
+                            <div>
+                                {{messaggi.message}}
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="justify grey-bg">
+                <div class="justify grey-bg chat-pt-bassa" id="barra-text" >
                     <i class="fa-regular fa-face-smile"></i>
                     <input type="text" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone"></i>
