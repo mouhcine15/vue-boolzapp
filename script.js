@@ -161,7 +161,16 @@ const root = new Vue({
                 this.contacts[this.active].messages.push(nuovo);
                 this.newMessage = "";
             }
+            setTimeout(this.risposta,1000);
             
+        },
+
+        risposta(){
+            const message = {
+                message : 'ok',
+                status : 'received',
+            }
+            this.contacts[this.active].messages.push(message);
         }
 
     }
