@@ -15,20 +15,22 @@
 .intestazione {
     height: 70px;
     width: 100%;
-    background-color: lightgrey;
+    background-color: rgb(240, 240, 240);
 }
 
 img {
     width: 60px;
     border-radius: 50%;
+    margin: 10px;
 }
 
-i {
-    margin: 5px;
+.intestazione i {
+    margin: 7px;
     font-size: 20px;
+    color: grey;
 }
 
-.alert {
+.avviso {
     height: 70px;
     width: 100%;
     background-color: rgb(0, 157, 255);
@@ -37,6 +39,31 @@ i {
 #bell {
     background-color: white;
     border-radius: 50%;
+    color: rgb(0, 157, 255);
+    margin-left: 10px;
+}
+
+#bell i {
+    margin: 5px;
+    font-size: 20px;
+    color: rgb(0, 157, 255);
+}
+
+#attiva-notifiche {
+    font-size: 12px;
+    color: rgb(95, 95, 95);
+    text-decoration: underline;
+}
+
+#ricerca-utente {
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+}
+
+#barra-text i {
+    margin: 10px;
+    font-size: 20px;
+    color: grey;
 }
 
 .parte-dx {
@@ -48,9 +75,32 @@ i {
 input {
     width: 100%;
 }
+
+#barra-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.contatto {
+    border-bottom: solid 1px rgb(240, 240, 240);
+}
+
+.max-50 {
+    max-width: 50%;
+}
+
+/* flex */
+
 .justify {
     display: flex;
     justify-content: flex-start;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .center-vertical {
@@ -68,22 +118,30 @@ input {
     justify-content: space-around;
 }
 
+
+/* color and background-color */
+
 .white-bg {
     background-color: white;
 }
 .grey-bg {
-    background-color: lightgray;
+    background-color: rgb(240, 240, 240);
 }
 
 .relative {
     position: relative;
 }
-#barra-text {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+.grey {
+    color: grey;
 }
 
+.px-12 {
+    font-size: 12px;
+}
+
+
+/* rchiamate in funzioni */
 
 .mandato {
     display: flex;

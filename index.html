@@ -10,86 +10,107 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div id="app" class="container">
-        <div class="row">
-            <div class="col-4 sezione white-bg">
-                <div class="intestazione space-between">
-                    <div class="justify center-vertical">
-                        <div class="imgProfilo">
-                            <img src="https://image-aws-us-west-2.vsco.co/e057e2/163313516/602ba96f86483d4088000002/vsco602ba970626cf.jpg" alt="">
-                        </div>
-                        <div>
-                            Luffy
-                        </div>
-                    </div>
-                    <div class="center-vertical space-around">
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-comment"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>
-                <div class="alert justify center-vertical">
-                    <div id="bell">
-                        <i class="fa-solid fa-bell-slash"></i>
-                    </div>
-                    <div>
-                        <div>
-                            Ricevi notifiche di nuovi messaggi
-                        </div>
-                        <div>
-                            Attiva notifiche desktop
-                        </div>
-                    </div>
-                </div>
-                <div class="justify center-vertical white-bg">
-                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <input type="text" placeholder="cerca o inizia una nuova chat" v-model="newSearch" @keyup="searchContact()">
-                </div>
-
-                <div>
-                    <div v-for="(user, i) in contacts" :key="i" @click="directchat(i)" :class="[user.visible === false ? 'none' : '']">
-                        <img :src="user.avatar"/>
-                       {{user.name}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-8 sezione relative">
-                <div class="intestazione space-between">
-                    <div class="justify center-vertical">
-                        <div class="imgProfilo">
-                            <img :src="contacts[active].avatar">
-                        </div>
-                        <div>
-                            {{contacts[active].name}}
-                        </div>
-                    </div>
-                    <div class="center-vertical space-around">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>
-                <div class="chat" v-for="messaggi in contacts[active].messages">
-                    
-                    <div :class="mandatoRicevuto(messaggi.status)">
-                        <div :class="messageColor(messaggi.status)">
+   
+    <div id="main">
+        <div id="app" class="container">
+            <div class="row">
+                <div class="col-4 sezione white-bg">
+                    <div class="intestazione space-between">
+                        <div class="justify center-vertical">
+                            <div class="imgProfilo">
+                                <img src="https://image-aws-us-west-2.vsco.co/e057e2/163313516/602ba96f86483d4088000002/vsco602ba970626cf.jpg" alt="">
+                            </div>
                             <div>
-                                {{messaggi.message}}
+                                Luffy
+                            </div>
+                        </div>
+                        <div class="center-vertical space-around">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-comment"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="avviso justify center-vertical">
+                        <div id="bell">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            <div>
+                                Ricevi notifiche di nuovi messaggi
+                            </div>
+                            <div id="attiva-notifiche">
+                                Attiva notifiche desktop
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ricerca-utente" class="justify center-vertical white-bg">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input type="text" placeholder="cerca o inizia una nuova chat" v-model="newSearch" @keyup="searchContact()">
+                    </div>
+    
+                    <div>
+                        <div class="contatto justify center-vertical" v-for="(user, i) in contacts" :key="i" @click="directchat(i)" :class="[user.visible === false ? 'none' : '']">
+                            <div>
+                                <img :src="user.avatar"/>
+                            </div>
+                            <div>
+                                <div>
+                                    {{user.name}}
+                                </div>
+                                 <div class="grey px-12">
+                                     Ultimo messaggio inviato
+                                 </div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="justify grey-bg chat-pt-bassa" id="barra-text" >
-                    <i class="fa-regular fa-face-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="aggiungi()">
-                    <i class="fa-solid fa-microphone"></i>
+                <div class="col-8 sezione relative">
+                    <div class="intestazione space-between">
+                        <div class="justify center-vertical">
+                            <div class="imgProfilo">
+                                <img :src="contacts[active].avatar">
+                            </div>
+                            <div>
+                                {{contacts[active].name}}
+                                <div class="grey px-12">
+                                    Ultimo accesso ieri alle 12:00
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-vertical space-around">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div class="chat" v-for="messaggi in contacts[active].messages">
+                        
+                        <div :class="mandatoRicevuto(messaggi.status)">
+                            <div class="max-50" :class="messageColor(messaggi.status)">
+                                <div>
+                                    <div>
+                                        {{messaggi.message}}
+                                    </div>
+                                    <div class="grey px-12 flex-end">
+                                        {{messaggi.date}}
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify grey-bg chat-pt-bassa" id="barra-text" >
+                        <i class="fa-regular fa-face-smile"></i>
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="aggiungi()">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
                 </div>
+    
             </div>
-
         </div>
     </div>
+    
     
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

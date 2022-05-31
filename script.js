@@ -155,7 +155,8 @@ const root = new Vue({
         aggiungi() {
             const nuovo = {
                 message: this.newMessage,
-                status: 'sent'  
+                status: 'sent',
+                date: '10/01/2020 19:00:00'  
             }
 
             if (this.newMessage != "") {
@@ -170,6 +171,7 @@ const root = new Vue({
             const message = {
                 message : 'ok',
                 status : 'received',
+                date: '10/01/2020 19:00:00',
             }
             this.contacts[this.active].messages.push(message);
         },
