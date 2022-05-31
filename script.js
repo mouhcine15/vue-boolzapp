@@ -3,6 +3,7 @@ const root = new Vue({
     data: {
         newMessage: "",
         active: 0,
+        newSearch: "",
         contacts: [
             {
                 name: 'Zoro',
@@ -29,7 +30,7 @@ const root = new Vue({
             {
                 name: 'Sanji',
                 avatar: 'https://i.pinimg.com/736x/50/c7/eb/50c7eb22dd5a72f8319223760c8c023f.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
@@ -51,7 +52,7 @@ const root = new Vue({
             {
                 name: 'Robin',
                 avatar: 'https://i.pinimg.com/originals/3b/bd/41/3bbd41b7d80560b84ca0ef26300f41fb.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '28/03/2020 10:10:40',
@@ -73,7 +74,7 @@ const root = new Vue({
             {
                 name: 'Jimbei',
                 avatar: 'https://i.pinimg.com/736x/23/96/43/239643b6fcd730c95a5019fdc642b5c6.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -90,7 +91,7 @@ const root = new Vue({
             {
                 name: 'Usopp',
                 avatar: 'https://i.pinimg.com/originals/d2/80/b3/d280b334747451a0de6a4a7624418793.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -107,7 +108,7 @@ const root = new Vue({
             {
                 name: 'Brook',
                 avatar: 'https://i.pinimg.com/originals/bf/95/5b/bf955b22263954ce65a26f0fc58360c7.jpg',
-                visible: false,
+                visible: true,
                 messages: [
                     {
                         date: '10/01/2020 15:30:55',
@@ -171,7 +172,18 @@ const root = new Vue({
                 status : 'received',
             }
             this.contacts[this.active].messages.push(message);
+        },
+
+        searchContact(){
+            this.contacts.forEach((index, i) => {
+                if (this.contacts[i].name.toLowerCase().includes(this.newSearch.toLowerCase())) {
+                    this.contacts[i].visible = true;
+                } else {
+                    this.contacts[i].visible = false;
+                }
+            });
         }
 
+    
     }
 });
